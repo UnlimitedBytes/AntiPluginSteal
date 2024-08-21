@@ -1,7 +1,6 @@
 package ovh.unlimitedbytes.antipluginsteal;
 
 import com.github.retrooper.packetevents.PacketEvents;
-import com.github.retrooper.packetevents.event.PacketListenerPriority;
 import com.google.inject.Inject;
 import com.velocitypowered.api.event.PostOrder;
 import com.velocitypowered.api.event.Subscribe;
@@ -90,8 +89,8 @@ public class AntiPluginSteal {
 
         event.setResult(CommandExecuteEvent.CommandResult.denied());
         event.getCommandSource().sendMessage(MiniMessage.miniMessage().deserialize(
-            "<red><lang:command.unknown.command><newline><click:suggest_command:/" + event.getCommand() + "><u>" +
-            event.getCommand() + "</u><i><lang:command.context.here></i></click>"
+            "<red><lang:command.unknown.command><newline><click:suggest_command:'/" + event.getCommand() +
+            "'><u>" + event.getCommand() + "</u><i><lang:command.context.here></i></click>"
         ));
     }
 
