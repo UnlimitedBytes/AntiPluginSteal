@@ -44,10 +44,6 @@ public class AntiPluginSteal {
         PacketEvents.setAPI(VelocityPacketEventsBuilder.build(server, pluginContainer, logger, dataDirectory));
         PacketEvents.getAPI().getSettings().debug(false).checkForUpdates(false);
         PacketEvents.getAPI().load();
-        PacketEvents.getAPI().getEventManager().registerListener(
-            new AntiPluginStealEventListener(),
-            PacketListenerPriority.LOW
-        );
         PacketEvents.getAPI().init();
 
         logger.info("AntiPluginSteal has been initialized!");

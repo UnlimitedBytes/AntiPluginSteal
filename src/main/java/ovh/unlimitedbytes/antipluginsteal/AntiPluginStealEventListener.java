@@ -11,6 +11,7 @@ import com.velocitypowered.api.proxy.Player;
 
 import java.util.Locale;
 
+// TODO: Needs to be fixed as it kicks players with network error
 public class AntiPluginStealEventListener implements PacketListener {
 
     @Override
@@ -39,7 +40,7 @@ public class AntiPluginStealEventListener implements PacketListener {
         Player player = (Player) event.getPlayer();
         PacketTypeCommon packetType = event.getPacketType();
 
-        if (packetType == PacketType.Play.Client.TAB_COMPLETE) {
+        if (packetType == PacketType.Play.Client.CHAT_COMMAND) {
             // Block commands that the player does not have permission to use from being tab-completed
             WrapperPlayClientTabComplete wrapper = new WrapperPlayClientTabComplete(event);
 
